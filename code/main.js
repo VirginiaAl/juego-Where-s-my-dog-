@@ -1,14 +1,44 @@
+//Enemies
+var player;
+var enemies1;
+var enemies2;
+var enemies3;
+var board;
+var enemiesArray=[];
+
+window.onload = function() {
+  console.log("hola");
+   board = new Board();
+   enemies1 = new Enemies(10, 10, 10);
+   enemies2 = new Enemies(10, 60, 20);
+   enemies3 = new Enemies(10, 120, 5);
+  enemiesArray.push(enemies1,enemies2,enemies3);
+  //player = new Player(0, 30, 30, 10, 10);
+
+board.draw();
+
+var interval = setInterval(function(){
+
+    //player.clear();
+    //player.move();
+    //player.draw();
+    for (i = 0; i < enemiesArray.length; i++){
+      enemiesArray[i].clear();
+      enemiesArray[i].move();
+      enemiesArray[i].draw();
+    }
 
 
-//Objeto player
+  },60);
 
-/* var player = function(life, positionX, positionY, velocityX, velocityY){
-  this.life = life;    //número de vidas
-  this.positionX = positionX;   //
-  this.positionY = positionY;
-  this.velocityX = 0;   //movimiento en el eje x
-  this.velocityY = 0;   //movimiento en el eje y
 };
+
+// Player
+
+
+
+
+/*
 player.prototype.moveUp = function () {
   player.velocityY -= 1;
 };
@@ -56,10 +86,4 @@ function stopMove() {
 };
 
 
-player.prototype.move = function(){  //comprobar la colisión
-
-};
-
-player.prototype.leaveLife = function(){  //si choca pierde vidas
-
-};  */
+  */
