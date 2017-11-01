@@ -29,15 +29,12 @@ Player.prototype.moveLeft = function() {
 Player.prototype.clear = function(){
   ctx = board.context;
   ctx.fillStyle = "white";
-  ctx.arc(this.pX, this.pY, 30, 0, Math.PI * 2, false);
-  ctx.stroke();
-  ctx.fill();
+  ctx.fillRect(0, 0, this.width, this.height);
 };
 
 Player.prototype.draw = function(){
   ctx = board.context;
   ctx.fillStyle = "black";
-  ctx.arc(this.pX, this.pY, 30, 0, Math.PI * 2, false);
-  ctx.stroke();
-  ctx.fill();
+  ctx.fillRect(this.pX, this.pY, 50, 30);
+
 };
