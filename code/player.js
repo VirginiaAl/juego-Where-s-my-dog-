@@ -1,6 +1,3 @@
-/*var canvas = document.getElementById('player');
-var context = canvas.getContext('2d');
-
 //Constructor Objetct player
 
 function Player(life, pX, pY, vX, vY){
@@ -12,65 +9,35 @@ function Player(life, pX, pY, vX, vY){
 };
 
 Player.prototype.leaveLife = function(){  //si choca pierde vidas
-
-Player.prototype.move = function(){  //move player with arrow key
-
-  function moveUp() {
-     this.vY -= 1;
-  };
-
-  function moveDown() {
-     this.vY += 1;
-  }
-
-  function moveLeft() {
-    this.vX -= 1;
-  }
-
-  function moveRight() {
-    this.vX += 1;
-  }
-
-  document.onkeydown = function(e) {
-    switch (e.keyCode) {
-      case 38:
-      case W:
-        moveUp();
-        break;
-      case 40:
-      case S:
-        moveDown();
-        break;
-      case 37:
-      case A:
-        moveLeft();
-        break;
-      case 39:
-      case D:
-        moveRight();
-        break;
-    }
-  };
-
-  document.onkeyup = function(e) {
-    stopMove();
-  };
-
-  function stopMove() {
-      this.vX = 0;
-      this.vY = 0;
-  };
-
 };
 
+Player.prototype.moveUp = function() {
+  this.pY -= 1;
+};
+
+Player.prototype.moveDown = function() {
+  this.pY += 1;
+};
+
+Player.prototype.moveLeft = function() {
+  this.pX -= 1;
+};
+
+ Player.prototype.moveRight = function() {
+  this.pX += 1;
+};
 Player.prototype.clear = function(){
+  ctx = board.context;
   ctx.fillStyle = "white";
-  ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-};
-Player.prototype.draw = function(){
-  ctx = Board.context;
   ctx.arc(this.pX, this.pY, 30, 0, Math.PI * 2, false);
   ctx.stroke();
   ctx.fill();
 };
-};  */
+
+Player.prototype.draw = function(){
+  ctx = board.context;
+  ctx.fillStyle = "black";
+  ctx.arc(this.pX, this.pY, 30, 0, Math.PI * 2, false);
+  ctx.stroke();
+  ctx.fill();
+};

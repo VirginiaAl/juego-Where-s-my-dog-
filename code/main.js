@@ -1,4 +1,4 @@
-//Enemies
+
 var player;
 var enemies1;
 var enemies2;
@@ -13,69 +13,43 @@ window.onload = function() {
    enemies2 = new Enemies(10, 60, 20);
    enemies3 = new Enemies(10, 120, 5);
   enemiesArray.push(enemies1,enemies2,enemies3);
-  //player = new Player(0, 30, 30, 10, 10);
+  player = new Player(0, 500, 300, 10, 10);
 
 board.draw();
 
-var interval = setInterval(function(){
+setInterval(function(){
+    board.clear();
 
-    //player.clear();
-    //player.move();
-    //player.draw();
     for (i = 0; i < enemiesArray.length; i++){
       enemiesArray[i].clear();
       enemiesArray[i].move();
       enemiesArray[i].draw();
     }
-
-
+    player.clear();
+    player.draw();
   },60);
 
 };
 
-// Player
+document.onkeydown = function(e) {
+switch (e.keyCode) {
+  case 38:
+    player.moveUp();
+    break;
+  case 40:
+    player.moveDown();
+    break;
+  case 37:
+    player.moveLeft();
+    break;
+  case 39:
+    player.moveRight();
+    break;
+}
 
-
-
+};
 
 /*
-player.prototype.moveUp = function () {
-  player.velocityY -= 1;
-};
-
-function moveDown() {
-  player.velocityY += 1;
-}
-
-function moveLeft() {
-  player.velocityX -= 1;
-}
-
-function moveRight() {
-  player.velocityX += 1;
-}
-
-document.onkeydown = function(e) {
-  switch (e.keyCode) {
-    case 38:
-    case W:
-      moveUp();
-      break;
-    case 40:
-    case S:
-      moveDown();
-      break;
-    case 37:
-    case A:
-      moveLeft();
-      break;
-    case 39:
-    case D:
-      moveRight();
-      break;
-  }
-};
-
 document.onkeyup = function(e) {
   stopMove();
 };
@@ -83,7 +57,4 @@ document.onkeyup = function(e) {
 function stopMove() {
     player.velocityX = 0;
     player.velocityY = 0;
-};
-
-
-  */
+};*/

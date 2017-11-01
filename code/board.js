@@ -11,7 +11,9 @@ function Board () {
   document.body.insertBefore(this.canvas, document.body.childNodes[0]);
 
 };
-
+Board.prototype.clear = function () {
+  this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+};
  /*Board.prototype.score = function () {
   points = (Math.floor(this.frames/5));
   this.context.font = '18px serif';
