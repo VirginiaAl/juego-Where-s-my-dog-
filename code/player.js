@@ -8,32 +8,31 @@ function Player(life, pX, pY, vX, vY){
   this.vY = vY;   //movimiento en el eje y
 };
 
-Player.prototype.leaveLife = function(){  //si choca pierde vidas
-};
+
 
 Player.prototype.moveUp = function() {
-  this.pY -= 1;
+  this.pY -= 30;
 };
 
 Player.prototype.moveDown = function() {
-  this.pY += 1;
+  this.pY += 30;
 };
 
 Player.prototype.moveLeft = function() {
-  this.pX -= 1;
+  this.pX -= 30;
 };
 
  Player.prototype.moveRight = function() {
-  this.pX += 1;
+  this.pX += 30;
 };
 Player.prototype.clear = function(){
-  ctx = board.context;
+  ctx = newGame.board.context;
   ctx.fillStyle = "white";
   ctx.fillRect(0, 0, this.width, this.height);
 };
 
 Player.prototype.draw = function(){
-  ctx = board.context;
+  ctx = newGame.board.context;
   ctx.fillStyle = "black";
   ctx.fillRect(this.pX, this.pY, 50, 30);
 
