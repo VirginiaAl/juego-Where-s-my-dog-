@@ -10,7 +10,6 @@ function Game (){
 }
 
 Game.prototype.update = function (){
-  console.log(this.enemiesArray[0]);
       this.board.draw();
       this.board.clear();
       this.board.drawGrid();
@@ -23,16 +22,20 @@ Game.prototype.update = function (){
       }
       this.player.clear();
       this.player.draw();
+for ( i = 0; i < this.enemiesArray.length; i++) {
+  if (this.checkEnemyCollision(this.enemiesArray[i])) {
+    console.log("hay colision");
+    alert ("perdiste");
+  }
+}
 
-  newGame.checkEnemyCollision();
 
 };
 //comprobar la colisión
 
-Game.prototype.checkEnemyCollision = function(player){
-  for (var enemiesArray = [] of (this.enemies1, this.enemies2, this.enemies3)){
-     if (enemiesArray.pX == player.pX && enemiesArray.pY == player.pY){
-       player.life = player.life -1;
-     }
-   };
+Game.prototype.checkEnemyCollision = function(obstacle){
+   return !((this.player.pY  + 20 < obstacle.pY)    ||
+           (this.player.pY    > obstacle.pY + 20) ||
+           (this.player.pX + 30 < obstacle.pX )  ||
+           (this.player.pX > obstacle.pX + 20));
 };

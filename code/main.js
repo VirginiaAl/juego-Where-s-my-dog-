@@ -10,6 +10,7 @@ var newGame;
 window.onload = function() {
   console.log("hola");
     newGame= new Game ();
+    console.log(newGame)
    setInterval(function(){newGame.update();},60);
    };
 
