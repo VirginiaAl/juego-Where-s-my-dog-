@@ -1,15 +1,15 @@
 function Game (){
 
   this.board = new Board(700,1300);
-  this.enemies1 = new Enemies(10, 30, 10,"images/car1.png");
-  this.enemies2 = new Enemies(10, 60, 20,"images/car1.png");
-  this.enemies3 = new Enemies(10, 120, 5,"images/car1.png");
-  this.enemies4 = new Enemies(10, 200, 10,"images/car1.png");
-  this.enemies5 = new Enemies(10, 260, 20,"images/car1.png");
-  this.enemies6 = new Enemies(10, 320, 5,"images/car1.png");
-  this.enemiesArray = [new Enemies(10, 10, 10,"images/car1.png"),new Enemies(10, 60, 20,"images/car1.png"),new Enemies(10, 120, 5,"images/car1.png"),new Enemies(10, 200, 10,"images/car1.png"),
-new Enemies(10, 260, 20,"images/car1.png"),new Enemies(10, 320, 5,"images/car1.png")];
-  this.player = new Player(3, 500, 300, 50, 50);
+  this.enemies1 = new Enemies(10, 440, 10, "images/car1.png");
+  this.enemies2 = new Enemies(10, 460, 20, "images/car2.png");
+  this.enemies3 = new Enemies(10, 480, 5, "images/car3.png");
+  this.enemies4 = new Enemies(10, 500, 15, "images/car1.png");
+  this.enemies5 = new Enemies(10, 520, 25, "images/car2.png");
+  this.enemies6 = new Enemies(10, 540, 8, "images/car3.png");
+  this.enemiesArray = [new Enemies(10, 440, 10,"images/car1.png"),new Enemies(10, 460, 20,"images/car2.png"),new Enemies(10, 480, 5,"images/car3.png"),new Enemies(10, 500, 15,"images/car1.png"),
+new Enemies(10, 520, 25,"images/car2.png"),new Enemies(10, 540, 8,"images/car3.png")];
+  this.player = new Player(3, 500, 600, 50, 50);
 
 }
 
@@ -28,8 +28,8 @@ Game.prototype.update = function (){
       this.player.draw();
 for ( i = 0; i < this.enemiesArray.length; i++) {
   if (this.checkEnemyCollision(this.enemiesArray[i])) {
-    console.log("hay colision");
-    alert ("you loose :(");
+    //console.log("hay colision");
+    alert ("oh doggy is dead :(");
   }
 }
 

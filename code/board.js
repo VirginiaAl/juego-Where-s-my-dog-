@@ -5,17 +5,17 @@ function Board (height,width) {
   this.gridPixelSize = 50;
   this.ctx = context;
   this.img = new Image();
-  this.img.src = "images/car1.png";
+  this.img.src = "images/background.jpg";
   this.img.addEventListener('load', this.draw.bind(this));
 }
-
+//draw background
  Board.prototype.draw = function (){
   this.ctx.clearRect(0, 0, this.width, this.height);
   this.ctx.drawImage(this.img, 0, 0, this.width, this.height);
 };
+//draw grid
 Board.prototype.drawGrid = function() {
-  console.log("entro")
-  this.ctx.lineWidth = 0.5;
+  this.ctx.lineWidth = 0.15;
   this.ctx.strokeStyle = "#000000";
   // horizontal grid lines
   for(var i = 0; i <= this.height; i = i + this.gridPixelSize){
