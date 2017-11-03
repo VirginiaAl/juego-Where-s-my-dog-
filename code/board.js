@@ -2,7 +2,7 @@
 function Board (height,width) {
   this.height = height;
   this.width = width;
-  this.gridPixelSize = 100;
+  this.gridPixelSize = 50;
   this.canvas = document.createElement("canvas");
 
 }

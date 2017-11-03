@@ -1,11 +1,11 @@
 function Game (){
 
-  this.board = new Board(500,1000);
+  this.board = new Board(700,1300);
   this.enemies1 = new Enemies(10, 10, 10);
   this.enemies2 = new Enemies(10, 60, 20);
   this.enemies3 = new Enemies(10, 120, 5);
   this.enemiesArray = [new Enemies(10, 10, 10),new Enemies(10, 60, 20),new Enemies(10, 120, 5)];
-  this.player = new Player(3, 500, 300, 1000, 1000);
+  this.player = new Player(3, 500, 300, 50, 50);
 
 }
 
@@ -25,7 +25,7 @@ Game.prototype.update = function (){
 for ( i = 0; i < this.enemiesArray.length; i++) {
   if (this.checkEnemyCollision(this.enemiesArray[i])) {
     console.log("hay colision");
-    alert ("perdiste");
+    alert ("you loose :(");
   }
 }
 

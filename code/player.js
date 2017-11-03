@@ -11,19 +11,19 @@ function Player(life, pX, pY, vX, vY){
 
 
 Player.prototype.moveUp = function() {
-  this.pY -= 30;
+  this.pY -= 50;
 };
 
 Player.prototype.moveDown = function() {
-  this.pY += 30;
+  this.pY += 50;
 };
 
 Player.prototype.moveLeft = function() {
-  this.pX -= 30;
+  this.pX -= 50;
 };
 
  Player.prototype.moveRight = function() {
-  this.pX += 30;
+  this.pX += 50;
 };
 Player.prototype.clear = function(){
   ctx = newGame.board.context;
