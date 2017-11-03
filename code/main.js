@@ -1,17 +1,18 @@
 
-var player;
-var enemies1;
-var enemies2;
-var enemies3;
-var board;
-var enemiesArray=[];
+
 var newGame;
+var context;
+
 
 window.onload = function() {
+  context=document.getElementById("canvas").getContext("2d");
   console.log("hola");
     newGame= new Game ();
     console.log(newGame);
-   setInterval(function(){newGame.update();},60);
+    //console.log(newGame);
+   setInterval(function(){
+     newGame.update();
+   },60);
    };
 
 

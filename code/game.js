@@ -1,10 +1,14 @@
 function Game (){
 
   this.board = new Board(700,1300);
-  this.enemies1 = new Enemies(10, 10, 10);
-  this.enemies2 = new Enemies(10, 60, 20);
-  this.enemies3 = new Enemies(10, 120, 5);
-  this.enemiesArray = [new Enemies(10, 10, 10),new Enemies(10, 60, 20),new Enemies(10, 120, 5)];
+  this.enemies1 = new Enemies(10, 30, 10,"images/car1.png");
+  this.enemies2 = new Enemies(10, 60, 20,"images/car1.png");
+  this.enemies3 = new Enemies(10, 120, 5,"images/car1.png");
+  this.enemies4 = new Enemies(10, 200, 10,"images/car1.png");
+  this.enemies5 = new Enemies(10, 260, 20,"images/car1.png");
+  this.enemies6 = new Enemies(10, 320, 5,"images/car1.png");
+  this.enemiesArray = [new Enemies(10, 10, 10,"images/car1.png"),new Enemies(10, 60, 20,"images/car1.png"),new Enemies(10, 120, 5,"images/car1.png"),new Enemies(10, 200, 10,"images/car1.png"),
+new Enemies(10, 260, 20,"images/car1.png"),new Enemies(10, 320, 5,"images/car1.png")];
   this.player = new Player(3, 500, 300, 50, 50);
 
 }
